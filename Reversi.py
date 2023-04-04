@@ -158,21 +158,16 @@ def fin_de_jeu(jeu):
         return True
     return False
 
-# programme principal
 if __name__ == "__main__":
 
-    # initialisation du jeu
     jeu = initialise_jeu(6)
     cree_fenetre(jeu['parametres']['taille_fenetre'], jeu['parametres']['taille_fenetre'])
 
-    # boucle principale
     while not jeu['fin']:
-        # affichage des objets
         efface_tout()
         affichage_plateau(jeu)
         mise_a_jour()
 
-        # gestion des événements
         ev = donne_ev()
         ty = type_ev(ev)
         if ty == 'Quitte':
@@ -183,10 +178,7 @@ if __name__ == "__main__":
             if coup in dico_coups_possibles:
                 jouer_coup(jeu, coup, dico_coups_possibles)
                 jeu['fin'] = fin_de_jeu(jeu)
-            # print(jeu)
-        # attente avant rafraîchissement
         sleep(1/jeu['parametres']['framerate'])
-    # fermeture et sortie
     efface_tout()
     affichage_plateau(jeu)
     mise_a_jour()
