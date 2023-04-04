@@ -93,9 +93,9 @@ def tour():
     on enlève les dés 1 et 5.
     Sinon, on sort (en mettant continuer à Faux et le score du tour à 0)
     """
-    continuer = True  # Idem pour le booléen continuer
-    nbde = 5  # Nb de dé au début de tour
-    score_tour = 0  # Score en début de tour
+    continuer = True  
+    nbde = 5  
+    score_tour = 0  
     while continuer:
         affichage_lancer(nbde)
         cmpt1, cmpt5 = lance_des(nbde)
@@ -122,7 +122,7 @@ if type_partie == '1':
     cmpt_tour = 0
     score_gagnant= int(input('Quel est le score à atteindre pour gagner le jeu ?'))
 
-    while score < score_gagnant:#5000
+    while score < score_gagnant:
         cmpt_tour += 1
         print("TOUR", cmpt_tour, ": DEBUT DU TOUR. Votre score est", score)
         score += tour()
@@ -137,7 +137,7 @@ else:
     score_joueur2= 0
     score_gagnant= int(input('Quel est le score à atteindre pour gagner le jeu ?'))
 
-    while score_joueur1 or score_joueur2 < score_gagnant :#5000
+    while score_joueur1 or score_joueur2 < score_gagnant :
         cmpt_tour += 1
         print("TOUR", cmpt_tour, ": DEBUT DU TOUR. Score :", joueur1,':',score_joueur1, joueur2,':', score_joueur2, 'À ton tour,', joueur1)
         score_joueur1 += tour()
